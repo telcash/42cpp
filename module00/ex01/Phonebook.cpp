@@ -6,7 +6,7 @@
 /*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 23:08:17 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/05/24 10:01:14 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2025/05/24 12:10:51 by carlossalaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,6 @@ Contact Phonebook::formatContact(Contact contact)
         nickname = std::string(10 - nickname.length(), ' ') + nickname;
     if (phone_number.length() > 10)
         phone_number = phone_number.substr(0, 9) + ".";
-
     formatted_contact.set_first_name(first_name);
     formatted_contact.set_last_name(last_name);
     formatted_contact.set_nickname(nickname);
