@@ -6,7 +6,7 @@
 /*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 19:38:47 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/06 20:31:49 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2025/11/06 20:33:00 by carlossalaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Zombie
         Zombie();
         Zombie(std::string name);
         ~Zombie();
+        void setName(std::string name);
         void announce();
 };
 
