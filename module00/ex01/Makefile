@@ -6,7 +6,7 @@
 #    By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/23 22:40:17 by carlossalaz       #+#    #+#              #
-#    Updated: 2025/05/24 09:59:51 by carlossalaz      ###   ########.fr        #
+#    Updated: 2025/11/06 16:50:05 by carlossalaz      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM = rm -f
 SRC_DIR = ./
 OBJ_DIR = ./
 
-SRC_FILES = Phonebook.cpp Contact.cpp main.cpp
+SRC_FILES = main.cpp Phonebook.cpp Contact.cpp
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))

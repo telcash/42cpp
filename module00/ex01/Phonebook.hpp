@@ -6,7 +6,7 @@
 /*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 23:00:51 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/05/24 09:39:35 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2025/11/06 17:57:14 by carlossalaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Phonebook
     private:
         Contact _contacts[MAX_CONTACTS];
         int _index;
-        Contact formatContact(Contact contact);
+        std::string formatField(std::string field);
     public:
         Phonebook();
         void add_contact();
