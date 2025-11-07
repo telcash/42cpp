@@ -1,0 +1,4 @@
+roses are red
+brain power is cool
+brainstorming is fun
+end of brain file
