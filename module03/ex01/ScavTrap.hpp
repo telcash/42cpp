@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 21:19:40 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/07 16:46:15 by csalazar         ###   ########.fr       */
+/*   Created: 2025/11/07 20:32:10 by csalazar          #+#    #+#             */
+/*   Updated: 2025/11/07 20:50:39 by csalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
-#include <iostream>
-
-HumanB::HumanB(std::string name) : _name(name), _weapon(NULL) {}
-
-HumanB::~HumanB() {}
-
-void HumanB::attack() const {
-    if (_weapon)
-        std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
-    else
-        std::cout << _name << " is unarmed" << std::endl;
-}
-
-void HumanB::setWeapon(Weapon &weapon) {
-    _weapon = &weapon;
-}
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
