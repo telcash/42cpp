@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 23:08:17 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/06 18:21:16 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2025/11/07 16:37:01 by csalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,21 +90,16 @@ void Phonebook::search_contact(void)
 {
     std::string input;
     int index;
-    size_t i = 0;
 
     this->display_contacts();
     std::cout << "Enter the index of the contact you want to see: ";
     std::getline(std::cin, input);
-    while (i < input.length())
+    if (input.empty() || input.length() > 1 || !isdigit(input[0]))
     {
-        if (!isdigit(input[i]))
-        {
-            std::cout << "Invalid index." << std::endl;
-            return ;
-        }
-        i++;
+        std::cout << "Invalid index." << std::endl;
+        return ;
     }
-    index = std::stoi(input);
+    index = (int)(input[0] - '0');
     if (index < 0 || index >= MAX_CONTACTS)
         std::cout << "Invalid index." << std::endl;
     else if (this->_contacts[index].get_first_name() == "")
@@ -126,7 +121,7 @@ void Phonebook::display_contacts(void)
         if (this->_contacts[i].get_first_name() != "")
         {
             formatted_contact = Contact::formatContact(this->_contacts[i]);
-            std::cout << "         " << std::to_string(i) << "|"
+            std::cout << "         " << (char)(i + '0') << "|"
                 << formatted_contact.get_first_name() << "|" 
                 << formatted_contact.get_last_name() << "|" 
                 << formatted_contact.get_nickname()

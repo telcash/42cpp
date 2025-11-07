@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 11:45:33 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/05/24 12:09:08 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2025/11/07 16:37:57 by csalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,11 @@ void Account::displayStatus() const {
 }
 
 void Account::_displayTimestamp() {
-    std::time_t now = std::time(nullptr);
-    std::tm *ltm = std::localtime(&now);
-    std::cout << "[" << std::put_time(ltm, "%Y%m%d_%H%M%S") << "] ";
+    std::time_t t = std::time(NULL);
+    std::tm* tm_info = std::localtime(&t);
+    char buffer[20];
+    std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", tm_info);
+    std::cout << buffer;
 }
 
 int Account::getNbAccounts() {
