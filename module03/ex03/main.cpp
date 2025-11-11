@@ -6,12 +6,14 @@
 /*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 19:42:56 by csalazar          #+#    #+#             */
-/*   Updated: 2025/11/11 08:57:00 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2025/11/11 09:37:18 by carlossalaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -25,6 +27,18 @@ int main()
     scav.takeDamage(20);
     scav.beRepaired(10);
     scav.guardGate();
+
+    FragTrap frag("Fraggy");
+    frag.attack("Target3");
+    frag.takeDamage(15);
+    frag.beRepaired(5);
+    frag.highFivesGuys();
+
+    DiamondTrap diamond("Diamond");
+    diamond.attack("Target4");
+    diamond.takeDamage(25);
+    diamond.beRepaired(15);
+    diamond.whoAmI();
 
     return 0;
 }

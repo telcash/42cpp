@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 18:50:58 by csalazar          #+#    #+#             */
-/*   Updated: 2025/11/11 08:39:34 by carlossalaz      ###   ########.fr       */
+/*   Created: 2025/11/11 09:18:38 by carlossalaz       #+#    #+#             */
+/*   Updated: 2025/11/11 09:31:19 by carlossalaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include <string>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
+#include <string>
 
-class ClapTrap {
-protected:
+class DiamondTrap : public ScavTrap, public FragTrap {
+private:
     std::string _name;
-    unsigned int _hitPoints;
-    unsigned int _energyPoints;
-    unsigned int _attackDamage;
 public:
-    ClapTrap();
-    ClapTrap(std::string name);
-    ClapTrap(const ClapTrap &other);
-    ClapTrap &operator=(const ClapTrap &other);
-    ~ClapTrap();
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-};
+    DiamondTrap();
+    DiamondTrap(std::string name);
+    DiamondTrap(const DiamondTrap &other);
+    DiamondTrap &operator=(const DiamondTrap &other);
+    virtual ~DiamondTrap();
 
+    void attack(const std::string &target);
+    void whoAmI();
+};
 #endif
