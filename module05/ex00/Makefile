@@ -6,7 +6,7 @@
 #    By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 19:35:41 by carlossalaz       #+#    #+#              #
-#    Updated: 2025/11/07 19:48:29 by csalazar         ###   ########.fr        #
+#    Updated: 2025/11/19 20:57:11 by csalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM = rm -f
 SRC_DIR = ./
 OBJ_DIR = ./
 
-SRC_FILES = main.cpp ClapTrap.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
