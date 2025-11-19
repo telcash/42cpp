@@ -6,19 +6,19 @@
 /*   By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 09:52:04 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/11 16:29:28 by csalazar         ###   ########.fr       */
+/*   Updated: 2025/11/19 13:36:36 by csalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Dog::Dog() {
     Dog::brain = new Brain();
     std::cout << "Dog constructed." << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog &other) {
     Dog::brain = new Brain(*(other.brain));
     std::cout << "Dog copy constructed." << std::endl;
 }

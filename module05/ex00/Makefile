@@ -6,18 +6,18 @@
 #    By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 19:35:41 by carlossalaz       #+#    #+#              #
-#    Updated: 2025/11/19 13:14:18 by csalazar         ###   ########.fr        #
+#    Updated: 2025/11/07 19:48:29 by csalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = clap
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 SRC_DIR = ./
 OBJ_DIR = ./
 
-SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRC_FILES = main.cpp ClapTrap.cpp
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
