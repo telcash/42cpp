@@ -5,43 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 20:56:52 by csalazar          #+#    #+#             */
-/*   Updated: 2025/11/20 07:46:13 by carlossalaz      ###   ########.fr       */
+/*   Created: 2025/11/20 08:18:30 by carlossalaz       #+#    #+#             */
+/*   Updated: 2025/11/20 08:37:27 by carlossalaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
     try {
-        Bureaucrat b1("Boss", 2);
-        std::cout << b1 << std::endl;
-        b1.incrementGrade();
-        std::cout << b1 << std::endl;
-        b1.incrementGrade();
-    } catch (const std::exception& e) {
+        Bureaucrat paco("Paco", 51);
+        Form taxForm("Tax Form", 50, 30);
+        std::cout << paco << std::endl;
+        std::cout << taxForm << std::endl;
+        paco.signForm(taxForm);
+        paco.incrementGrade();
+        std::cout << paco << std::endl;
+        paco.signForm(taxForm); 
+        std::cout << taxForm << std::endl;
+    }
+    catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        Bureaucrat b2("Newbie", 149);
-        std::cout << b2 << std::endl;
-        b2.decrementGrade();
-        std::cout << b2 << std::endl;
-        b2.decrementGrade();
-    } catch (const std::exception& e) {
+        Form form1("Form1", 0, 30);
+    }
+    catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        Bureaucrat b3("BHigh", 0);  // This should throw an exception
-    } catch (const std::exception& e) {
+        Form form1("Form1", 50, -2);
+    }
+    catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        Bureaucrat b4("BLow", 151);  // This should throw an exception
-    } catch (const std::exception& e) {
+        Form form2("Form1", 151, 30);
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    try {
+        Form form2("Form1", 50, 200);
+    }
+    catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
