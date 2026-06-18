@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
+/*   By: csalazar <csalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:54:43 by carlossalaz       #+#    #+#             */
-/*   Updated: 2026/06/18 18:29:19 by telcash          ###   ########.fr       */
+/*   Updated: 2026/06/18 20:00:07 by csalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::shrubberize() const
 {
-    const char *filename = (target + "_shrubbery").c_str();
-    std::ofstream outfile(filename);
+    std::string filename = target + "_shrubbery";
+    std::ofstream outfile(filename.c_str());
     if (!outfile)
     {
         std::cerr << "Error creating file: " << filename << std::endl;
