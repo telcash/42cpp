@@ -6,18 +6,18 @@
 #    By: telcash <telcash@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 19:35:41 by carlossalaz       #+#    #+#              #
-#    Updated: 2026/06/18 18:55:04 by telcash          ###   ########.fr        #
+#    Updated: 2026/04/25 13:33:25 by telcash          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = convert
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 SRC_DIR = ./
-OBJ_DIR = obj/
+OBJ_DIR = ./
 
-SRC_FILES = main.cpp Bureaucrat.cpp
+SRC_FILES = main.cpp ScalarConverter.cpp
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))

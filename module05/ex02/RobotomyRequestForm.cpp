@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:02:27 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 09:06:16 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 18:30:53 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     return *this;
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &executor) const
+void RobotomyRequestForm::robotomize() const
 {
-    if (!getIsSigned())
-    {
-        throw AForm::FormNotSignedException();
-    }
-    if (executor.getGrade() > getGradeToExecute())
-    {
-        throw AForm::GradeTooLowException();
-    }
-
     std::srand(std::time(0));
     std::cout << "Bzzzz... Vrrrrr... (drilling noises)" << std::endl;
     if (std::rand() % 2 == 0)
@@ -57,5 +48,13 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
     else
     {
         std::cout << "Robotomy failed on " << target << "!" << std::endl;
+    }
+}
+
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const
+{
+    if (canExecute(executor))
+    {
+        robotomize();
     }
 }

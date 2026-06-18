@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:08:27 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 09:48:53 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 18:53:30 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main() {
 
     try {
         marvin.signForm(sF);
-        marvin.executeForm(sF); //error
+        marvin.executeForm(sF);
     }
     catch (const std::exception &e) {
         std::cout << e.what() << std::endl;
@@ -36,7 +36,7 @@ int main() {
 
     try {
         ford.executeForm(sF);
-        ford.executeForm(rF); //error
+        ford.executeForm(rF);
     }
     catch (const std::exception &e) {
         std::cout << e.what() << std::endl;
@@ -45,7 +45,7 @@ int main() {
     try {
         ford.signForm(rF);
         ford.executeForm(rF);
-        ford.signForm(pF); //error
+        ford.signForm(pF);
     }
     catch (const std::exception &e) {
         std::cout << e.what() << std::endl;

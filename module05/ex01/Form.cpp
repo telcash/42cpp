@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:09:30 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 08:41:27 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/04/25 11:09:15 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int Form::getGradeToExecute() const
 }
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
-{
+{  
     if (bureaucrat.getGrade() > gradeToSign)
     {
         throw GradeTooLowException();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:49:42 by csalazar          #+#    #+#             */
-/*   Updated: 2025/11/20 08:21:33 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/04/25 11:09:39 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ void Bureaucrat::decrementGrade() {
 }
 
 void Bureaucrat::signForm(Form& form) {
+    if (form.getIsSigned()) {
+        std::cout << name << " cannot sign " << form.getName() << " because it's already signed." << std::endl;
+        return;
+    }
     try {
         form.beSigned(*this);
         std::cout << name << " signed " << form.getName() << std::endl;

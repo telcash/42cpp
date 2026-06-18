@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:18:30 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 08:37:27 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/04/25 11:08:27 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main() {
         std::cout << paco << std::endl;
         paco.signForm(taxForm); 
         std::cout << taxForm << std::endl;
+        paco.signForm(taxForm);
     }
     catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
