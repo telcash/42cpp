@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:01:47 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 09:06:22 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 18:30:53 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ public:
     ~RobotomyRequestForm();
     RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
     void execute(const Bureaucrat &executor) const;
+    void robotomize() const;
 };
 #endif

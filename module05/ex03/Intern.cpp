@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 10:15:24 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 10:38:29 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 19:12:02 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,43 @@ Intern &Intern::operator=(const Intern &other)
     return *this;
 }
 
+AForm *Intern::createShrubberyCreationForm(const std::string &target) const
+{
+    return new ShrubberyCreationForm(target);
+}
+
+AForm *Intern::createRobotomyRequestForm(const std::string &target) const
+{
+    return new RobotomyRequestForm(target);
+}
+
+AForm *Intern::createPresidentialPardonForm(const std::string &target) const
+{
+    return new PresidentialPardonForm(target);
+}
+
 AForm *Intern::makeForm(const std::string &formName, const std::string &target) const
 {
-    int i = 0;;
-    std::string formTypes[3] = {
+    std::string formNames[] = {
         "shrubbery creation",
         "robotomy request",
         "presidential pardon"
     };
-    while (i < 3 && formTypes[i] != formName)
-        i++;
-    switch(i)
+
+    AForm *(Intern::*formCreators[])(const std::string &) const = {
+        &Intern::createShrubberyCreationForm,
+        &Intern::createRobotomyRequestForm,
+        &Intern::createPresidentialPardonForm
+    };
+
+    for (int i = 0; i < 3; i++)
     {
-        case 0:
+        if (formNames[i] == formName)
+        {
             std::cout << "Intern creates " << formName << " form." << std::endl;
-            return new ShrubberyCreationForm(target);
-        case 1:
-            std::cout << "Intern creates " << formName << " form." << std::endl;
-            return new RobotomyRequestForm(target);
-        case 2:
-            std::cout << "Intern creates " << formName << " form." << std::endl;
-            return new PresidentialPardonForm(target);
-        default:
-            std::cout << "Intern cannot create " << formName << " because it is unknown." << std::endl;
-            return nullptr;
+            return (this->*formCreators[i])(target);
+        }
     }
+    std::cout << "Intern cannot create " << formName << " because it is unknown." << std::endl;
+    return NULL;
 }

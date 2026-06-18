@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:54:43 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 10:11:06 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 18:29:19 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,13 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return *this;
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+void ShrubberyCreationForm::shrubberize() const
 {
-    if (!getIsSigned())
-    {
-        throw AForm::FormNotSignedException();
-    }
-    if (executor.getGrade() > getGradeToExecute())
-    {
-        throw AForm::GradeTooLowException();
-    }
-
-    std::ofstream outfile(target + "_shrubbery");
+    const char *filename = (target + "_shrubbery").c_str();
+    std::ofstream outfile(filename);
     if (!outfile)
     {
-        std::cerr << "Error creating file: " << target + "_shrubbery" << std::endl;
+        std::cerr << "Error creating file: " << filename << std::endl;
         return;
     }
 
@@ -68,4 +60,12 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
                "           |X|\n"
                "         =======\n";
     outfile.close();
+}
+
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+{
+    if (canExecute(executor))
+    {
+        shrubberize();
+    }
 }

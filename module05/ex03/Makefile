@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+         #
+#    By: telcash <telcash@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 19:35:41 by carlossalaz       #+#    #+#              #
-#    Updated: 2025/11/20 10:24:22 by carlossalaz      ###   ########.fr        #
+#    Updated: 2026/06/18 18:59:14 by telcash          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 SRC_DIR = ./
-OBJ_DIR = ./
+OBJ_DIR = obj/
 
 SRC_FILES = main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))

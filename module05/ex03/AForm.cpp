@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:09:30 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 09:00:29 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 18:30:53 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,18 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
     }
     isSigned = true;
 }
-
+bool AForm::canExecute(const Bureaucrat &executor) const
+{
+    if (!isSigned)
+    {
+        throw FormNotSignedException();
+    }
+    if (executor.getGrade() > gradeToExecute)
+    {
+        throw GradeTooLowException();
+    }
+    return true;
+}
 const char *AForm::GradeTooHighException::what() const throw()
 {
     return "Grade is too high!";

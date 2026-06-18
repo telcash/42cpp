@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 10:14:28 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 10:24:22 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 19:12:02 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 
 class Intern
 {
+private:
+    AForm *createShrubberyCreationForm(const std::string &target) const;
+    AForm *createRobotomyRequestForm(const std::string &target) const;
+    AForm *createPresidentialPardonForm(const std::string &target) const;
 public:
     Intern();
     Intern(const Intern &other);

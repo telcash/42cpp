@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossalazar <carlossalazar@student.42    +#+  +:+       +#+        */
+/*   By: telcash <telcash@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:51:56 by carlossalaz       #+#    #+#             */
-/*   Updated: 2025/11/20 08:53:48 by carlossalaz      ###   ########.fr       */
+/*   Updated: 2026/06/18 18:29:23 by telcash          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
     ShrubberyCreationForm(const ShrubberyCreationForm &other);
     ~ShrubberyCreationForm();
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+    void shrubberize() const;
     void execute(const Bureaucrat &executor) const;
 };
 
