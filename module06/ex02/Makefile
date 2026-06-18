@@ -6,18 +6,18 @@
 #    By: telcash <telcash@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 19:35:41 by carlossalaz       #+#    #+#              #
-#    Updated: 2026/06/18 21:48:47 by telcash          ###   ########.fr        #
+#    Updated: 2026/06/18 22:16:07 by telcash          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = identification
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 SRC_DIR = ./
 OBJ_DIR = objs/
 
-SRC_FILES = main.cpp ScalarConverter.cpp
+SRC_FILES = main.cpp Base.cpp
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
